@@ -1,21 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.ComponentModel.DataAnnotations.Schema;
+using Microsoft.AspNetCore.Identity;
 
 namespace GCD_Trainning_Team2.Models
 {
-    public class User
+    public class User : IdentityUser
     {
-        public int Id { get; set; }
-
+        public int ID { get; set; }
         public string Name { get; set; }
-        public string Email { get; set; }
+        public string E_mail { get; set; }
         public string Password { get; set; }
-
         public DateTime CreateAt { get; set; }
+        [NotMapped]
+        public string Role { get; set; }
 
-        public IList<UserRole> UserRole { get; set; }
         public IList<UpdateRes> UpdateRes { get; set; }
         public IList<AccessRes> AccessRes { get; set; }
         public User()

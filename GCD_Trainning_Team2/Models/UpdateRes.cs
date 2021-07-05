@@ -7,7 +7,7 @@ namespace GCD_Trainning_Team2.Models
 {
     public class UpdateRes
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         public int UserId { get; set; }
         public string DocumentName { get; set; }
         public string AuthorName { get; set; }

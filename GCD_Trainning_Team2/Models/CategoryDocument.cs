@@ -7,7 +7,7 @@ namespace GCD_Trainning_Team2.Models
 {
     public class CategoryDocument
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         public int CategoryId { get; set; }
         public Category Category { get; set; }
         public int DocumentId { get; set; }

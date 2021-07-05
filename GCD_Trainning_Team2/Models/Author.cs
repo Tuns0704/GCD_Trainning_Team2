@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace GCD_Trainning_Team2.Models
 {
-    public class Author
+    public class Author 
     {
-        public int Id { get; set; }
+        public int ID { get; set; }
         public string Name { get; set; }
 
         public IList<CategoryDocument> CategoryDocument { get; set; }
