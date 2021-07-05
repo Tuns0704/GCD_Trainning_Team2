@@ -10,12 +10,6 @@ namespace GCD_Trainning_Team2.Models
         public int Id { get; set; }
         public string Name { get; set; }
 
-        public DateTime TimeAccess { get; set; }
-
         public IList<CategoryDocument> CategoryDocument { get; set; }
-        public Author()
-        {
-            this.TimeAccess = DateTime.Now;
-        }
     }
 }

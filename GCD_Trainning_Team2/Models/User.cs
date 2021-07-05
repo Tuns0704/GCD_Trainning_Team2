@@ -16,7 +16,8 @@ namespace GCD_Trainning_Team2.Models
         public DateTime CreateAt { get; set; }
 
         public IList<UserRole> UserRole { get; set; }
-        public IList<CategoryDocument> CategoryDocument { get; set; }
+        public IList<UpdateRes> UpdateRes { get; set; }
+        public IList<AccessRes> AccessRes { get; set; }
         public User()
         {
             this.CreateAt = DateTime.Now;

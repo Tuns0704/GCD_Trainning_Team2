@@ -15,6 +15,7 @@ namespace GCD_Trainning_Team2.Models
         public DateTime TimeAccess { get; set; }
 
         public IList<CategoryDocument> CategoryDocument { get; set; }
+        public User Users { get; set; }
         public AccessRes()
         {
             this.TimeAccess = DateTime.Now;
