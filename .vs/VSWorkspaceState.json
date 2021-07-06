@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\GCD_Trainning_Team2"
+    "\\GCD_Trainning_Team2",
+    "\\GCD_Trainning_Team2\\Controllers",
+    "\\GCD_Trainning_Team2\\Data\\Migrations",
+    "\\GCD_Trainning_Team2\\Models"
   ],
-  "SelectedNode": "\\GCD_Trainning_Team2.sln",
   "PreviewInSolutionExplorer": false
 }

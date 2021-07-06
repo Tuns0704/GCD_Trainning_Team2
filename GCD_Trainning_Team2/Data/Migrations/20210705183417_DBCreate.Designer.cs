@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GCD_Trainning_Team2.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20210705162514_DBCreate")]
+    [Migration("20210705183417_DBCreate")]
     partial class DBCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -41,7 +41,6 @@ namespace GCD_Trainning_Team2.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("UsersId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("ID");
@@ -191,7 +190,6 @@ namespace GCD_Trainning_Team2.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("UsersId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<int>("Vote")
@@ -224,7 +222,6 @@ namespace GCD_Trainning_Team2.Data.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("UsersId")
-                        .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("ID");
@@ -249,9 +246,6 @@ namespace GCD_Trainning_Team2.Data.Migrations
                     b.Property<DateTime>("CreateAt")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("E_mail")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Email")
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
@@ -259,17 +253,11 @@ namespace GCD_Trainning_Team2.Data.Migrations
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
 
-                    b.Property<int>("ID")
-                        .HasColumnType("int");
-
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
 
                     b.Property<DateTimeOffset?>("LockoutEnd")
                         .HasColumnType("datetimeoffset");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NormalizedEmail")
                         .HasColumnType("nvarchar(256)")
@@ -278,9 +266,6 @@ namespace GCD_Trainning_Team2.Data.Migrations
                     b.Property<string>("NormalizedUserName")
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
-
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
@@ -392,12 +377,10 @@ namespace GCD_Trainning_Team2.Data.Migrations
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderKey")
-                        .HasColumnType("nvarchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("ProviderDisplayName")
                         .HasColumnType("nvarchar(max)");
@@ -434,12 +417,10 @@ namespace GCD_Trainning_Team2.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("LoginProvider")
-                        .HasColumnType("nvarchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Name")
-                        .HasColumnType("nvarchar(128)")
-                        .HasMaxLength(128);
+                        .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Value")
                         .HasColumnType("nvarchar(max)");
@@ -453,9 +434,7 @@ namespace GCD_Trainning_Team2.Data.Migrations
                 {
                     b.HasOne("GCD_Trainning_Team2.Models.User", "Users")
                         .WithMany("AccessRes")
-                        .HasForeignKey("UsersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UsersId");
                 });
 
             modelBuilder.Entity("GCD_Trainning_Team2.Models.CategoryDocument", b =>
@@ -496,18 +475,14 @@ namespace GCD_Trainning_Team2.Data.Migrations
                 {
                     b.HasOne("GCD_Trainning_Team2.Models.User", "Users")
                         .WithMany()
-                        .HasForeignKey("UsersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UsersId");
                 });
 
             modelBuilder.Entity("GCD_Trainning_Team2.Models.UpdateRes", b =>
                 {
                     b.HasOne("GCD_Trainning_Team2.Models.User", "Users")
                         .WithMany("UpdateRes")
-                        .HasForeignKey("UsersId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UsersId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
